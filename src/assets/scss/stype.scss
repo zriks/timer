@@ -1,0 +1,113 @@
+@mixin flex($direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+    justify-content: center;
+}
+
+%hoverlink {
+    text-decoration: none;
+    color: rgb(240, 240, 240);
+    &:hover {
+        color: white;
+    }
+}
+
+body {
+    margin: 0 auto;
+    padding: 0;
+    background-color: #444444;
+}
+
+.app {
+    display: flex;
+    color: #cecece;
+
+    .container {
+        display: inherit;
+    }
+
+    .nav {
+        height: 100vh;
+        width: 64px;
+        @include flex(column);
+
+        a {
+            @extend %hoverlink;
+            font-size: 28px;
+            padding-bottom: 1em;
+        }
+    }
+
+    .add-schedule,
+    .list-schedule,
+    .home,
+    .not-found {
+        flex: auto;
+    }
+
+    .add-schedule {
+        @include flex();
+
+        .form {
+            @include flex(column);
+
+            h1 {
+                display: inline;
+                font-weight: normal;
+                color: white;
+            }
+
+            .field {
+                width: -webkit-fill-available;
+
+                label {
+                    color: #cecece;
+                }
+
+                input[type="text"],
+                input[type="date"],
+                textarea,
+                button {
+                    width: inherit;
+                    padding: 12px 20px;
+                    margin: 8px 0;
+                    display: inline-block;
+                    box-sizing: border-box;
+                    border: 2px solid #cecece;
+                    background-color: transparent;
+                    color: #cecece;
+                }
+
+                input[type="text"],
+                input[type="date"],
+                textarea {
+                    &:hover {
+                        border-color: #ececec;
+                    }
+                }
+
+                button:hover {
+                    background-color: #cecece;
+                    color: #444444;
+                }
+            }
+        }
+    }
+}
+
+.tagsClass {
+    margin-top: 1em;
+
+    .tagClass {
+        color: #49afce;
+        border: 1px solid #49afce;
+        padding: 0.5em 1em;
+    }
+
+    .removeClass {
+        padding: 0 0 0 8px;
+        font-size: 13px;
+        cursor: pointer;
+    }
+}
