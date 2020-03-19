@@ -4,7 +4,7 @@ import TagsMember from "./TagsMember";
 
 export default function AddSchedule() {
     const [input, setInput] = useState({
-        fromDate: Date().zw,
+        fromDate: "",
         toDate: "",
         event: "",
         type: "",
@@ -23,7 +23,7 @@ export default function AddSchedule() {
                         <label>From date</label>
                         <Input
                             require={true}
-                            type="date"
+                            type="datetime-local"
                             name="fromDate"
                             onChange={handleInputChange}
                         />
@@ -32,7 +32,7 @@ export default function AddSchedule() {
                         <label>To date</label>
                         <Input
                             require={true}
-                            type="date"
+                            type="datetime-local"
                             name="toDate"
                             onChange={handleInputChange}
                         />
