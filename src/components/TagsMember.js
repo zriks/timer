@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { WithContext as ReactTags } from "react-tag-input";
 
-export default function TagsMember() {
+export default function TagsMember({ value, onChange }) {
     const KeyCodes = {
         comma: 188,
         enter: 13
@@ -9,14 +9,22 @@ export default function TagsMember() {
 
     const delimiters = [KeyCodes.comma, KeyCodes.enter];
 
-    const [tags, setTags] = useState([{ id: "me", text: "me" }]);
-
     const handleDelete = i => {
-        setTags(tags.filter((tag, index) => index !== i));
+        onChange({
+            target: {
+                name: "member",
+                value: value.filter((tag, index) => index !== i)
+            }
+        });
     };
 
     const handleAddition = tag => {
-        setTags([...tags, tag]);
+        onChange({
+            target: {
+                name: "member",
+                value: [...value, tag]
+            }
+        });
     };
 
     return (
@@ -25,10 +33,10 @@ export default function TagsMember() {
                 tags: "tagsClass",
                 selected: "selectedClass",
                 tag: "tagClass",
-                remove: "removeClass",
+                remove: "removeClass"
             }}
-            placeholder={'Add member'}
-            tags={tags}
+            placeholder={"Add member"}
+            tags={value}
             inline={false}
             handleDelete={handleDelete}
             handleAddition={handleAddition}
