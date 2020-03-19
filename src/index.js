@@ -4,7 +4,7 @@ import { render } from "react-dom";
 const App = () => {
     return (
         <div>
-            <h1>react app running</h1>
+            <h1>run run run</h1>
         </div>
     );
 };
