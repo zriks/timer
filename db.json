@@ -100,6 +100,142 @@
       "isBookMark": false,
       "createAt": "2020-03-20T09:20:03.628Z",
       "id": 5
+    },
+    {
+      "subject": "This is Subject @@@",
+      "fromDate": "2020-03-30T11:11",
+      "toDate": "2020-03-30T14:22",
+      "event": "\n                    type: actionType.ADD_SCHEDULE_SUCCESS,\n                    payload: res",
+      "type": "Job",
+      "member": [
+        {
+          "id": "me",
+          "text": "me"
+        }
+      ],
+      "isCompleted": false,
+      "isBookMark": false,
+      "createAt": "2020-03-20T09:26:31.236Z",
+      "id": 6
+    },
+    {
+      "subject": "This is Subject @@@",
+      "fromDate": "2020-03-31T11:11",
+      "toDate": "2020-03-16T11:11",
+      "event": "payload: res\",\n      \"type\": \"Job\",\n      \"member\": [",
+      "type": "Trip",
+      "member": [
+        {
+          "id": "me",
+          "text": "me"
+        }
+      ],
+      "isCompleted": false,
+      "isBookMark": false,
+      "createAt": "2020-03-20T09:31:29.579Z",
+      "id": 7
+    },
+    {
+      "subject": "This is Subject @@@",
+      "fromDate": "2020-01-24T11:11",
+      "toDate": "2020-03-10T14:22",
+      "event": "<Link to=\"/\">\n                <Icon name=\"home\" size=\"large\" />\n            </Link>\n            <Link to=\"/add\">\n                <Icon name=\"calendar plus outline\" size=\"large\" />\n            </Link>\n            <Link to=\"/list\">\n                <Icon name=\"calendar alternate outline\" size=\"large\" />\n            </Link>",
+      "type": "Trip",
+      "member": [
+        {
+          "id": "me",
+          "text": "me"
+        }
+      ],
+      "isCompleted": false,
+      "isBookMark": false,
+      "createAt": "2020-03-20T09:38:04.524Z",
+      "id": 8
+    },
+    {
+      "subject": "This is Subject @@@",
+      "fromDate": "2020-03-30T11:11",
+      "toDate": "2020-06-17T14:22",
+      "event": "\nimport { connect } from \"react-redux\";\nimport { Button, Form } from \"semantic-ui-react\";\nimport { useForm } from \"react-hook-form\";\nimport TagsMember from \"./TagsMember\";",
+      "type": "Learn",
+      "member": [
+        {
+          "id": "me",
+          "text": "me"
+        }
+      ],
+      "isCompleted": false,
+      "isBookMark": false,
+      "createAt": "2020-03-20T09:39:54.466Z",
+      "id": 9
+    },
+    {
+      "subject": "This is Subject @@@",
+      "fromDate": "2020-03-31T11:11",
+      "toDate": "2020-04-14T11:11",
+      "event": "1wererwer",
+      "type": "Trip",
+      "member": [
+        {
+          "id": "me",
+          "text": "me"
+        }
+      ],
+      "isCompleted": false,
+      "isBookMark": false,
+      "createAt": "2020-03-20T09:40:57.937Z",
+      "id": 10
+    },
+    {
+      "subject": "dfsdfdfsdfsdfdsfsdf",
+      "fromDate": "2020-03-26T11:11",
+      "toDate": "2020-03-23T11:11",
+      "event": "\n    return (\n        <div className=\"add-schedule\">\n            <Form\n                onSubmit={handleSubmit(onSubmit)}\n            >\n                <h1>ADD SCHEDULE</h1>\n                <Form.Field>",
+      "type": "Trip",
+      "member": [
+        {
+          "id": "me",
+          "text": "me"
+        }
+      ],
+      "isCompleted": false,
+      "isBookMark": false,
+      "createAt": "2020-03-20T09:44:12.389Z",
+      "id": 11
+    },
+    {
+      "subject": "This is Subject @@@",
+      "fromDate": "2020-03-18T11:11",
+      "toDate": "2020-03-03T14:22",
+      "event": "\n    });\n    const [redirectToReferrer, setRedirectToReferrer] = useState(false);\n    const { register, errors, handleSubmit } = useForm();\n",
+      "type": "Trip",
+      "member": [
+        {
+          "id": "me",
+          "text": "me"
+        }
+      ],
+      "isCompleted": false,
+      "isBookMark": false,
+      "createAt": "2020-03-20T09:49:49.416Z",
+      "id": 12
+    },
+    {
+      "subject": "This is Subject @@@",
+      "fromDate": "2020-03-25T11:11",
+      "toDate": "2020-06-03T11:11",
+      "event": "export const addSchedule = schedule => {\n    return dispatch => {\n        dispatch({ type: actionType.ADD_SCHEDULE_BEGIN });\n        scheduleApi\n            .addSchedule(schedule)\n            .then(res => {\n                dispatch({\n                    type: actionType.ADD_SCHEDULE_SUCCESS,\n                });\n                dispatch(getSchedules())\n            })\n            .catch(err => {\n                dispatch({ type: actionType.ADD_SCHEDULE_FAILURE });\n            });\n    };\n};",
+      "type": "Trip",
+      "member": [
+        {
+          "id": "me",
+          "text": "me"
+        }
+      ],
+      "isCompleted": false,
+      "isBookMark": false,
+      "createAt": "2020-03-20T10:08:09.652Z",
+      "id": 13
     }
   ]
 }

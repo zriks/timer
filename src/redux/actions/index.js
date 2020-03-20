@@ -1,6 +1,5 @@
 import actionType from "../constants/actionTypes";
 import scheduleApi from "../../api/scheduleApi";
-import history from "../../helper/history";
 
 export const addSchedule = schedule => {
     return dispatch => {
@@ -10,10 +9,8 @@ export const addSchedule = schedule => {
             .then(res => {
                 dispatch({
                     type: actionType.ADD_SCHEDULE_SUCCESS,
-                    payload: res
                 });
-                history.push("/list");
-                dispatch(getSchedules());
+                dispatch(getSchedules())
             })
             .catch(err => {
                 dispatch({ type: actionType.ADD_SCHEDULE_FAILURE });

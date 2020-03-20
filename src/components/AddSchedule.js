@@ -36,7 +36,9 @@ function AddSchedule({ addSchedule }) {
 
     return (
         <div className="add-schedule">
-            <Form onSubmit={handleSubmit(onSubmit)}>
+            <Form
+                onSubmit={handleSubmit(onSubmit)}
+            >
                 <h1>ADD SCHEDULE</h1>
                 <Form.Field>
                     <label>Subject</label>
@@ -106,7 +108,13 @@ function AddSchedule({ addSchedule }) {
                     />
                 </Form.Field>
                 <Form.Field>
-                    <Button type="submit" onSubmit={handleSubmit(onSubmit)}>
+                    <Button
+                        type="submit"
+                        onSubmit={e => {
+                            e.preventDefault();
+                            return handleSubmit(onSubmit);
+                        }}
+                    >
                         Add
                     </Button>
                 </Form.Field>
