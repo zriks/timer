@@ -1,12 +1,12 @@
-import { ADD_SCHEDULE } from "../constants/actionTypes";
+import actionType from "../constants/actionTypes";
 
 const initState = [];
 
-export default function scheduleReducer(state = initState, action) {
+export const scheduleReducer = (state = initState, action) => {
     switch (action.type) {
-        case ADD_SCHEDULE:
-            return [...state, action.payload];
+        case actionType.GET_ALL_SCHEDULE_SUCCESS:
+            return [...action.payload];
         default:
-            state;
+            return state;
     }
-}
+};

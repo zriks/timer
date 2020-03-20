@@ -1,0 +1,105 @@
+{
+  "schedules": [
+    {
+      "subject": "This is Subject @@@",
+      "fromDate": "2020-03-12T11:11",
+      "toDate": "2020-03-16T14:22",
+      "event": "      name=\"member\"\n                        value={input.member}\n                        onChange={handleInputChange}\n                    />\n                </Form.Field>\n                <Form.Field>\n                    <Button type=\"submit\" onSubmit={handleSubmit(onSubmit)}>\n                        Add\n                    </Button>\n                </Form.Field>\n            </Form>",
+      "type": "Job",
+      "member": [
+        {
+          "id": "me",
+          "text": "me"
+        }
+      ],
+      "isCompleted": false,
+      "isBookMark": false,
+      "createAt": "2020-03-20T07:39:55.351Z",
+      "id": 1
+    },
+    {
+      "subject": "Second Subject",
+      "fromDate": "2020-03-26T14:22",
+      "toDate": "2020-03-15T11:11",
+      "event": "{\n  \"name\": \"manage_schedule\",\n  \"version\": \"0.1.0\",\n  \"lockfileVersion\": 1,\n  \"requires\": true,\n  \"dependencies\": {\n    \"@babel/code-frame\": {",
+      "type": "Code",
+      "member": [
+        {
+          "id": "me",
+          "text": "me"
+        },
+        {
+          "id": "Friend",
+          "text": "Friend"
+        }
+      ],
+      "isCompleted": false,
+      "isBookMark": false,
+      "createAt": "2020-03-20T08:03:58.492Z",
+      "id": 2
+    },
+    {
+      "subject": "This is Subject @@@",
+      "fromDate": "2020-03-24T11:11",
+      "toDate": "2020-03-22T14:22",
+      "event": "GET /schedules 304 3.388 ms - -\nGET /schedules 304 5.164 ms - -\nGET /schedules 304 4.111 ms - -\nGET /schedules 304 3.210 ms - -\nGET /schedules 304 3.123 ms - -\nGET /schedules 304 3.557 ms - -\nGET /schedules 304 2.510 ms - -",
+      "type": "Trip",
+      "member": [
+        {
+          "id": "me",
+          "text": "me"
+        }
+      ],
+      "isCompleted": false,
+      "isBookMark": false,
+      "createAt": "2020-03-20T08:10:56.415Z",
+      "id": 3
+    },
+    {
+      "subject": "qwerqwerqwer",
+      "fromDate": "2020-03-30T11:11",
+      "toDate": "2020-03-29T14:22",
+      "event": "import React from \"react\";\nimport { WithContext as ReactTags } from \"react-tag-input\";\n\nexport default function TagsMember({ value, onChange }) {\n    const KeyCodes = {\n        comma: 188,\n        enter: 13\n    };\n\n    const delimiters = [KeyCodes.comma, KeyCodes.enter];\n\n    const handleDelete = i => {\n        onChange({\n            target: {\n                name: \"member\",\n                value: value.filter((tag, index) => index !== i)\n            }\n        });\n    };\n\n    const handleAddition = tag => {\n        onChange({\n            target: {\n                name: \"member\",\n                value: [...value, tag]\n            }\n        });\n    };\n\n    return (\n        <ReactTags\n            classNames={{\n                tags: \"tagsClass\",\n                selected: \"selectedClass\",\n                tag: \"tagClass\",\n                remove: \"removeClass\"\n            }}\n            placeholder={\"Add member\"}\n            tags={value} \n            autofocus={false}\n            handleDelete={handleDelete}\n            handleAddition={handleAddition}\n            allowDragDrop={false}\n            delimiters={delimiters}\n        />\n    );\n}",
+      "type": "Job",
+      "member": [
+        {
+          "id": "me",
+          "text": "me"
+        },
+        {
+          "id": "asdfsdfsdf",
+          "text": "asdfsdfsdf"
+        },
+        {
+          "id": "asdfsdfs",
+          "text": "asdfsdfs"
+        },
+        {
+          "id": "werqwer",
+          "text": "werqwer"
+        }
+      ],
+      "isCompleted": false,
+      "isBookMark": false,
+      "createAt": "2020-03-20T09:16:39.063Z",
+      "id": 4
+    },
+    {
+      "subject": "qwerqwerqwer",
+      "fromDate": "2020-03-30T11:11",
+      "toDate": "2020-06-17T14:22",
+      "event": "import actionType from \"../constants/actionTypes\";\nimport scheduleApi from \"../../api/scheduleApi\";\nimport history from \"../../helper/history\";\n\nexport const addSchedule = schedule => {\n    return dispatch => {\n        dispatch({ type: actionType.ADD_SCHEDULE_BEGIN });\n        scheduleApi\n            .addSchedule(schedule)\n            .then(res => {\n                dispatch({\n                    type: actionType.ADD_SCHEDULE_SUCCESS,\n                    payload: res\n                });\n                history.push(\"/list\");\n                dispatch(getSchedules())\n            })\n            .catch(err => {\n                dispatch({ type: actionType.ADD_SCHEDULE_FAILURE });\n            });\n    };\n};\n\nexport const getSchedules = () => {\n    return dispatch => {\n        dispatch({ type: actionType.GET_ALL_SCHEDULE_BEGIN });\n        scheduleApi\n            .getSchedules()\n            .then(res => {\n                dispatch({\n                    type: actionType.GET_ALL_SCHEDULE_SUCCESS,\n                    payload: res.data\n                });\n            })\n            .catch(err => {\n                dispatch({ type: actionType.GET_ALL_SCHEDULE_FAILURE });\n            });\n    };\n};\n",
+      "type": "Trip",
+      "member": [
+        {
+          "id": "me",
+          "text": "me"
+        }
+      ],
+      "isCompleted": false,
+      "isBookMark": false,
+      "createAt": "2020-03-20T09:20:03.628Z",
+      "id": 5
+    }
+  ]
+}

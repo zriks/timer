@@ -8,6 +8,7 @@
 %hoverlink {
     text-decoration: none;
     color: rgb(240, 240, 240);
+
     &:hover {
         color: white;
     }
@@ -30,6 +31,7 @@ body {
     .nav {
         height: 100vh;
         width: 64px;
+        position: fixed;
         @include flex(column);
 
         a {
@@ -44,6 +46,13 @@ body {
     .home,
     .not-found {
         flex: auto;
+
+        h1 {
+            display: inline;
+            font-weight: normal;
+            color: white;
+            margin: 2em 0;
+        }
     }
 
     .add-schedule {
@@ -51,12 +60,6 @@ body {
 
         .form {
             @include flex(column);
-
-            h1 {
-                display: inline;
-                font-weight: normal;
-                color: white;
-            }
 
             .field {
                 width: -webkit-fill-available;
@@ -94,6 +97,10 @@ body {
             }
         }
     }
+
+    .list-schedule {
+        @include flex(column);
+    }
 }
 
 .tagsClass {
@@ -109,5 +116,85 @@ body {
         padding: 0 0 0 8px;
         font-size: 13px;
         cursor: pointer;
+    }
+}
+
+.list-content {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 50em;
+
+    .list-item {
+        position: relative;
+
+        label {
+            margin-right: 10px;
+            text-transform: uppercase;
+        }
+
+        pre {
+            white-space: pre-wrap;
+        }
+
+        .time {
+            font-size: 12px;
+
+            .drive {
+                margin: 10px;
+            }
+        }
+
+        .subject {
+            font-size: 18px;
+            color: #ff5252;
+        }
+
+        .type {
+            margin: 15px 0;
+
+            li {
+                border: 1px solid;
+                padding: 1px 10px;
+                border-radius: 50%;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #cecece;
+                    color: #444444;
+                }
+            }
+        }
+
+        .member {
+            margin-top: .5em;
+        }
+
+        .control {
+            position: absolute;
+            right: 0;
+            top: 0;
+            margin: 0.5em 0.5em 0 0;
+
+            i {
+                cursor: pointer;
+                font-size: large;
+
+                &:hover {
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+
+.list-inline {
+    list-style: none;
+    display: flex;
+    padding: 0;
+
+    li {
+        margin-right: 1em;
     }
 }

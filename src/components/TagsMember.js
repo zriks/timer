@@ -36,8 +36,8 @@ export default function TagsMember({ value, onChange }) {
                 remove: "removeClass"
             }}
             placeholder={"Add member"}
-            tags={value}
-            inline={false}
+            tags={value} 
+            autofocus={false}
             handleDelete={handleDelete}
             handleAddition={handleAddition}
             allowDragDrop={false}
