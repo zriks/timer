@@ -41,7 +41,7 @@ body {
         }
     }
 
-    .add-schedule,
+    .form-schedule,
     .list-schedule,
     .home,
     .not-found {
@@ -55,12 +55,10 @@ body {
         }
     }
 
-    .add-schedule {
-        @include flex();
+    .form-schedule {
+        @include flex(column);
 
         .form {
-            @include flex(column);
-
             .field {
                 width: -webkit-fill-available;
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Divider, Icon } from "semantic-ui-react";
 import { isArray } from "lodash";
-import ScheduleControl from "./ScheduleControl";
+import ControlSchedule from "./ControlSchedule";
 
 export default function Schedule({ schedule }) {
     return (
@@ -33,7 +33,11 @@ export default function Schedule({ schedule }) {
                         ))}
                 </ul>
             </span>
-            <ScheduleControl />
+            <ControlSchedule
+                id={schedule.id}
+                isCompleted={schedule.isCompleted}
+                isBookMark={schedule.isBookMark}
+            />
             <Divider inverted />
         </li>
     );

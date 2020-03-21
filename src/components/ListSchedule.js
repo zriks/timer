@@ -22,8 +22,8 @@ const ListSchedule = ({ listSchedule, getSchedules }) => {
     );
 };
 
-const mapStateToProp = ({ schedules }) => ({
-    listSchedule: schedules
+const mapStateToProp = ({ schedule }) => ({
+    listSchedule: schedule.schedules
 });
 
 const mapDispatchToProp = dispatch => ({

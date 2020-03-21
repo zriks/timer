@@ -11,7 +11,7 @@ export default function Nav() {
             <Link to="/add">
                 <Icon name="calendar plus outline" size="large" />
             </Link>
-            <Link to="/list">
+            <Link to="/schedules">
                 <Icon name="calendar alternate outline" size="large" />
             </Link>
         </nav>

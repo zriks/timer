@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import NotFound from "./components/NotFound";
 import AddSchedule from "./components/AddSchedule";
 import ListSchedule from "./components/ListSchedule";
+import EditSchedule from "./components/EditSchedule";
 import { Container } from "semantic-ui-react";
 
 function App() {
@@ -17,7 +18,8 @@ function App() {
                     <Switch>
                         <Route exact path="/" component={Home} />
                         <Route path="/add" component={AddSchedule} />
-                        <Route path="/list" component={ListSchedule} />
+                        <Route path="/schedules" component={ListSchedule} />
+                        <Route path="/schedule/:id" component={EditSchedule} />
                         <Route component={NotFound} />
                     </Switch>
                 </Router>

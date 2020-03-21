@@ -236,6 +236,27 @@
       "isBookMark": false,
       "createAt": "2020-03-20T10:08:09.652Z",
       "id": 13
+    },
+    {
+      "subject": "subject",
+      "fromDate": "2020-03-13T11:11",
+      "toDate": "2020-03-29T14:22",
+      "event": "import { compose, applyMiddleware, createStore } from \"redux\";\nimport { createLogger } from \"redux-logger\";\nimport thunk from \"redux-thunk\";\nimport rootReducer from \"./reducers\";\nimport history from \"../helper/history\";\n\nconst loggerMiddleware = createLogger();\nconst composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;\nconst middlewares = [];\nmiddlewares.push(thunk);\n\nif (process.env.REACT_APP_ENV === \"development\") {\n    middlewares.push(loggerMiddleware);\n}\nconst store = createStore(\n    rootReducer(history),\n    composeEnhancers(applyMiddleware(...middlewares))\n);\n\nexport default store;\n",
+      "type": "Learn",
+      "member": [
+        {
+          "id": "me",
+          "text": "me"
+        },
+        {
+          "id": "nam",
+          "text": "nam"
+        }
+      ],
+      "isCompleted": false,
+      "isBookMark": false,
+      "createAt": "2020-03-21T02:07:06.515Z",
+      "id": 14
     }
   ]
 }

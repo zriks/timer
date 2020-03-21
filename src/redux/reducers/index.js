@@ -3,6 +3,6 @@ import { scheduleReducer } from "./scheduleReducer";
 
 const rootReducer = () =>
     combineReducers({
-        schedules: scheduleReducer
+        schedule: scheduleReducer
     });
 export default rootReducer;

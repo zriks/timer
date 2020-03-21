@@ -1,36 +1,93 @@
 import actionType from "../constants/actionTypes";
 import scheduleApi from "../../api/scheduleApi";
+import common from "../../helper/common";
 
 export const addSchedule = schedule => {
     return dispatch => {
-        dispatch({ type: actionType.ADD_SCHEDULE_BEGIN });
+        dispatch(common.actionWithoutData(actionType.ADD_SCHEDULE_BEGIN));
         scheduleApi
             .addSchedule(schedule)
             .then(res => {
-                dispatch({
-                    type: actionType.ADD_SCHEDULE_SUCCESS,
-                });
-                dispatch(getSchedules())
+                dispatch(
+                    common.actionWithData(
+                        actionType.ADD_SCHEDULE_SUCCESS,
+                        res.data
+                    )
+                );
+                dispatch(getSchedules());
             })
             .catch(err => {
-                dispatch({ type: actionType.ADD_SCHEDULE_FAILURE });
+                dispatch(
+                    common.actionWithData(
+                        actionType.ADD_SCHEDULE_FAILURE,
+                        err.message
+                    )
+                );
             });
     };
 };
 
 export const getSchedules = () => {
     return dispatch => {
-        dispatch({ type: actionType.GET_ALL_SCHEDULE_BEGIN });
+        dispatch(common.actionWithoutData(actionType.GET_ALL_SCHEDULE_BEGIN));
         scheduleApi
             .getSchedules()
             .then(res => {
-                dispatch({
-                    type: actionType.GET_ALL_SCHEDULE_SUCCESS,
-                    payload: res.data
-                });
+                dispatch(
+                    common.actionWithData(
+                        actionType.GET_ALL_SCHEDULE_SUCCESS,
+                        res.data
+                    )
+                );
             })
             .catch(err => {
-                dispatch({ type: actionType.GET_ALL_SCHEDULE_FAILURE });
+                dispatch(
+                    common.actionWithData(
+                        actionType.GET_ALL_SCHEDULE_FAILURE,
+                        err.message
+                    )
+                );
             });
     };
+};
+
+export const getSchedule = id => dispatch => {
+    dispatch(common.actionWithoutData(actionType.GET_SCHEDULE_BEGIN));
+    scheduleApi
+        .getSchedule(id)
+        .then(res => {
+            dispatch(
+                common.actionWithData(actionType.GET_SCHEDULE_SUCCESS, res.data)
+            );
+        })
+        .catch(err => {
+            dispatch(
+                common.actionWithData(
+                    actionType.GET_SCHEDULE_FAILURE,
+                    err.message
+                )
+            );
+        });
+};
+
+export const editSchedule = (id, schedule) => dispatch => {
+    dispatch(common.actionWithoutData(actionType.EDIT_SCHEDULE_BEGIN));
+    scheduleApi
+        .editSchedule(id, schedule)
+        .then(res => {
+            dispatch(
+                common.actionWithData(
+                    actionType.EDIT_SCHEDULE_SUCCESS,
+                    res.data
+                )
+            );
+        })
+        .catch(err => {
+            dispatch(
+                common.actionWithData(
+                    actionType.EDIT_SCHEDULE_FAILURE,
+                    err.message
+                )
+            );
+        });
 };
