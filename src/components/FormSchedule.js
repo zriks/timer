@@ -118,7 +118,7 @@ export default function FormSchedule({ schedule, onSubmit }) {
                                 );
                             }}
                         >
-                            Add
+                            Submit
                         </Button>
                     </Form.Field>
                 </Form>

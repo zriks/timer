@@ -18,8 +18,8 @@ function App() {
                     <Switch>
                         <Route exact path="/" component={Home} />
                         <Route path="/add" component={AddSchedule} />
-                        <Route path="/schedules" component={ListSchedule} />
-                        <Route path="/schedule/:id" component={EditSchedule} />
+                        <Route exact path="/schedules" component={ListSchedule} />
+                        <Route path="/schedules/:id" component={EditSchedule} />
                         <Route component={NotFound} />
                     </Switch>
                 </Router>

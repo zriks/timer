@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-import { getSchedule } from "../redux/actions";
+import { getSchedule, editSchedule } from "../redux/actions";
 import FormSchedule from "./FormSchedule";
 
-const EditSchedule = ({ match, schedule, getSchedule }) => {
+const EditSchedule = ({ match, schedule, getSchedule, editSchedule }) => {
     const [redirectToReferrer, setRedirectToReferrer] = useState(false);
 
     useEffect(() => {
@@ -12,6 +12,7 @@ const EditSchedule = ({ match, schedule, getSchedule }) => {
     }, [getSchedule, match.params.id]);
 
     const onSubmit = output => {
+        editSchedule(match.params.id, output);
         setRedirectToReferrer(true);
     };
 
@@ -34,7 +35,8 @@ const mapStateToProp = ({ schedule }) => {
 };
 
 const mapDispatchToProp = dispatch => ({
-    getSchedule: id => dispatch(getSchedule(id))
+    getSchedule: id => dispatch(getSchedule(id)),
+    editSchedule: (id, schedule) => dispatch(editSchedule(id, schedule))
 });
 
 export default connect(mapStateToProp, mapDispatchToProp)(EditSchedule);

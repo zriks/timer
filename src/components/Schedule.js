@@ -33,11 +33,7 @@ export default function Schedule({ schedule }) {
                         ))}
                 </ul>
             </span>
-            <ControlSchedule
-                id={schedule.id}
-                isCompleted={schedule.isCompleted}
-                isBookMark={schedule.isBookMark}
-            />
+            <ControlSchedule schedule={schedule} />
             <Divider inverted />
         </li>
     );
