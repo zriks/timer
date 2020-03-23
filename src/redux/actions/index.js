@@ -22,10 +22,11 @@ export const addSchedule = schedule => dispatch => {
         });
 };
 
-export const getSchedules = () => dispatch => {
+export const getSchedules = value => dispatch => {
     dispatch(common.actionWithoutData(actionType.GET_ALL_SCHEDULE_BEGIN));
+    dispatch(loading(true));
     scheduleApi
-        .getSchedules()
+        .getSchedules(value)
         .then(res => {
             dispatch(
                 common.actionWithData(
@@ -42,10 +43,12 @@ export const getSchedules = () => dispatch => {
                 )
             );
         });
+    dispatch(loading(false));
 };
 
 export const getSchedule = id => dispatch => {
     dispatch(common.actionWithoutData(actionType.GET_SCHEDULE_BEGIN));
+    dispatch(loading(true));
     scheduleApi
         .getSchedule(id)
         .then(res => {
@@ -61,6 +64,7 @@ export const getSchedule = id => dispatch => {
                 )
             );
         });
+    dispatch(loading(false));
 };
 
 export const editSchedule = (id, schedule) => dispatch => {
@@ -85,3 +89,6 @@ export const editSchedule = (id, schedule) => dispatch => {
             );
         });
 };
+
+export const loading = isLoading =>
+    common.actionWithData(actionType.LOADING_REQUEST, isLoading);

@@ -5,12 +5,12 @@ import * as serviceWorker from "./serviceWorker";
 import "semantic-ui-css/semantic.min.css";
 import "./assets/scss/stype.scss";
 
-import App from "./App";
+import Router from "./router";
 import store from "./redux/store";
 
 ReactDOM.render(
     <Provider store={store}>
-        <App />
+        <Router />
     </Provider>,
     document.getElementById("root")
 );

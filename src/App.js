@@ -1,31 +1,25 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
 import Nav from "./components/Nav";
-import Home from "./components/Home";
-import NotFound from "./components/NotFound";
-import AddSchedule from "./components/AddSchedule";
-import ListSchedule from "./components/ListSchedule";
-import EditSchedule from "./components/EditSchedule";
+import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 import { Container } from "semantic-ui-react";
 
-function App() {
+const App = Page => props => {
     return (
         <div className="app">
             <Container>
-                <Router>
-                    <Nav />
-                    <Switch>
-                        <Route exact path="/" component={Home} />
-                        <Route path="/add" component={AddSchedule} />
-                        <Route exact path="/schedules" component={ListSchedule} />
-                        <Route path="/schedules/:id" component={EditSchedule} />
-                        <Route component={NotFound} />
-                    </Switch>
-                </Router>
+                <Nav />
+                <ReactCSSTransitionGroup
+                    transitionAppear={true}
+                    transitionAppearTimeout={600}
+                    transitionEnterTimeout={600}
+                    transitionLeaveTimeout={200}
+                    transitionName={"SlideIn"}
+                >
+                    <Page {...props} />
+                </ReactCSSTransitionGroup>
             </Container>
         </div>
     );
-}
+};
 
 export default App;

@@ -1,16 +1,22 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { isArray } from "lodash";
+import { Dimmer, Loader } from "semantic-ui-react";
 import { getSchedules } from "../redux/actions";
+import common from "../helper/common";
 import Schedule from "./Schedule";
 
-const ListSchedule = ({ listSchedule, getSchedules }) => {
+const ListSchedule = ({ location, listSchedule, getSchedules }) => {
     useEffect(() => {
-        getSchedules();
-    }, [getSchedules]);
+        const data = common.getDataFromQueryString(location.search);
+        getSchedules(data);
+    }, [getSchedules, location.search]);
 
     return (
         <div className="list-schedule">
+            <Dimmer active={listSchedule.isLoading}>
+                <Loader />
+            </Dimmer>
             <h1>LIST SCHEDULE</h1>
             <ul className="list-content">
                 {isArray(listSchedule) &&
@@ -27,7 +33,7 @@ const mapStateToProp = ({ schedule }) => ({
 });
 
 const mapDispatchToProp = dispatch => ({
-    getSchedules: () => dispatch(getSchedules())
+    getSchedules: value => dispatch(getSchedules(value))
 });
 
 export default connect(mapStateToProp, mapDispatchToProp)(ListSchedule);

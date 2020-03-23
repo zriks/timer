@@ -3,7 +3,8 @@ import actionType from "../constants/actionTypes";
 const initState = {
     schedules: [],
     selectSchedule: null,
-    errorMessage: ""
+    errorMessage: "",
+    isLoading: true
 };
 
 export const scheduleReducer = (state = initState, action) => {
@@ -24,6 +25,11 @@ export const scheduleReducer = (state = initState, action) => {
                 ...state,
                 errorMessage: action.payload
             };
+        case actionType.LOADING_REQUEST:
+            return {
+                ...state,
+                isLoading: action.payload
+            }
         default:
             return state;
     }
